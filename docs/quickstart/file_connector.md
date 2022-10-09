@@ -30,6 +30,7 @@ for {
   _          <- ZSink.fromZIO(stream >>> writePath(file))
   _          <- ZSink.fromZIO(readPath(file) >>> sink)
 } yield fileExists
+
 ```
 
 - tempDirPath - creates a directory and returns a ZStream with a single Path value, it will delete it once the for
